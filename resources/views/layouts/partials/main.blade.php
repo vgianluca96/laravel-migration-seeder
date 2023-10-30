@@ -26,8 +26,20 @@
                         <td>{{$train->arrival_hour}}</td>
                         <td>{{$train->train_code}}</td>
                         <td>{{$train->wagons_num}}</td>
-                        <td>{{$train->on_time}}</td>
-                        <td>{{$train->canceled}}</td>
+                        <td>
+                            @if ($train->on_time)
+                            SI
+                            @else
+                            NO  
+                            @endif
+                        </td>
+                        <td>
+                            @if ($train->canceled)
+                            SI
+                            @else
+                            NO  
+                            @endif
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
