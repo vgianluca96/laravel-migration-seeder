@@ -20,21 +20,9 @@ return new class extends Migration
             $table->time('departure_hour');
             $table->time('arrival_hour');
             $table->char('train_code', 8);
-            $table->tinyInteger('wagons_num');
-            $table->boolean('on_time');
-            $table->boolean('canceled');
-
-            /*
-            Azienda: string
-            Stazione di partenza: string
-            Stazione di arrivo: string
-            Orario di partenza: 
-            Orario di arrivo
-            Codice Treno
-            Numero Carrozze
-            In orario
-            Cancellato
-            */
+            $table->tinyInteger('wagons_num')->unsigned();
+            $table->boolean('on_time')->default(1);
+            $table->boolean('canceled')->default(0);
         });
     }
 
